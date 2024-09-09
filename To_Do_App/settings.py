@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-oy-=u78tdrosn95gw9!7mmcn=ztlc-xl^3jn(8b^_1fausfbtm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ ]
 
 
 # Application definition
@@ -80,9 +80,10 @@ WSGI_APPLICATION = 'To_Do_App.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
+
 
 
 # Password validation
@@ -120,8 +121,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = '/home/Eddyjay49/To_Do_App/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os  # Import os if it's not already imported
+
+# Path where media files will be stored on the server
+MEDIA_ROOT = os.path.join(BASE_DIR, '/home/Eddyjay49/To_Do_App/media/')
+
+# URL through which media files can be accessed
+MEDIA_URL = '/media/'
+
